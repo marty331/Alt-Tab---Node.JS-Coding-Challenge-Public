@@ -44,12 +44,14 @@
     };
 
     register = function(user) {
+      console.log('register user =', user);
       return $http.post('/api/register', user).success(function(data){
         saveToken(data.token);
       });
     };
 
     login = function(user) {
+      console.log('login user =', user);
       return $http.post('/api/login', user).success(function(data) {
         saveToken(data.token);
       });
